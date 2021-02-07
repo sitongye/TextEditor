@@ -12,8 +12,9 @@ public class DictionaryLL implements Dictionary
 	private LinkedList<String> dict;
 	
     // TODO: Add a constructor
-
-
+	public DictionaryLL(){
+	dict = new LinkedList<String>();
+	}
     /** Add this word to the dictionary.  Convert it to lowercase first
      * for the assignment requirements.
      * @param word The word to add
@@ -21,7 +22,15 @@ public class DictionaryLL implements Dictionary
      * (it wasn't already there). */
     public boolean addWord(String word) {
     	// TODO: Implement this method
-        return false;
+    	String lowerWord = word.toLowerCase();
+    	if (this.dict.size()!=0) {
+    	
+    	if (this.dict.contains(lowerWord)) {
+    		return false;
+    	}
+    	}
+    	this.dict.add(lowerWord);
+        return true;
     }
 
 
@@ -29,14 +38,20 @@ public class DictionaryLL implements Dictionary
     public int size()
     {
         // TODO: Implement this method
-        return 0;
+        return this.dict.size();
     }
 
     /** Is this a word according to this dictionary? */
     public boolean isWord(String s) {
-        //TODO: Implement this method
-        return false;
+    	String lowerS = s.toLowerCase();
+    	if(this.dict.size()!=0) {
+    	if (this.dict.contains(lowerS)) {
+    			return true;
+    	}
+    	
+        
     }
-
+    	return false;
     
+}
 }

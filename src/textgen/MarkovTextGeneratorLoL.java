@@ -33,6 +33,21 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 	public void train(String sourceText)
 	{
 		// TODO: Implement this method
+		String[] tokens = sourceText.split(" ");
+		starter = tokens[0];
+		String prevWord = starter;
+		for (int i=1; i<tokens.length-1;i++) {
+			String currentWord = tokens[i];
+		if (inList(this.wordList, prevWord)) {
+			  
+		}
+			
+			
+			
+		}
+			
+		
+		
 	}
 	
 	/** 
@@ -43,6 +58,16 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 	    // TODO: Implement this method
 		return null;
 	}
+	// check if a word is in the listNode
+	public boolean inList(List<ListNode> wordList2, String word) {
+		for (ListNode n: wordList2) {
+			if (n.getWord() == word) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	
 	
 	// Can be helpful for debugging
